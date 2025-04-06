@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import NewPostForm from "./_components/new-post-form";
+import DeletePostButton from "./_components/delete-post-button";
 
 export default async function Home() {
   const posts = await prisma.post.findMany();
@@ -12,7 +13,10 @@ export default async function Home() {
           {posts.map((post) => (
             <div key={post.id} className="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow duration-300">
               <div className="px-6 py-5">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{post.title}</h3>
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900">{post.title}</h3>
+                  <DeletePostButton postId={post.id} />
+                </div>
                 <div className="h-px bg-gray-200 my-3"></div>
                 <p className="text-gray-600 mt-2">{post.content}</p>
               </div>

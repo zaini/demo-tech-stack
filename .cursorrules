@@ -1,0 +1,105 @@
+# CURSOR RULES FOR REACT/TYPESCRIPT PROJECT
+
+## CORE TECHNOLOGIES & VERSIONS
+
+- TypeScript: Latest stable version with strict type checking
+- React: Latest stable version with function components and hooks
+- Next.js: Latest stable with App Router architecture
+- Tailwind CSS: Latest stable for styling
+- Shadcn UI: For component library
+- Node.js: Latest LTS version
+
+## CODE STRUCTURE & ORGANIZATION
+
+- File naming: Use kebab-case for all files (e.g., `user-profile.tsx`)
+- Component naming: Use PascalCase for exported components (e.g., `UserProfile`)
+- Directory structure:
+  - `/components/ui/` - Shadcn UI components
+  - `/components/my-ui/` - Custom reusable components
+  - `/app/page-name/_components/` - Page-specific components
+  - `/lib/` - Utility functions, hooks, and types
+  - `/providers/` - Context providers
+  - `/types/` - Global TypeScript interfaces, types, and enums
+  - `/services/` - API services and data fetchers
+  - `/hooks/` - Custom React hooks
+  - `/constants/` - Application constants
+
+## REACT & TYPESCRIPT PATTERNS
+
+- Always use modern React patterns:
+  - Function components instead of class components
+  - React hooks for state and effects
+  - Custom hooks for reusable logic
+- TypeScript usage:
+  - Define props with interfaces using naming convention `I{ComponentName}Props`
+  - Use type inference where possible
+  - Specify return types for all functions, especially async functions
+  - Use zod for runtime validation when appropriate
+  - Use proper React event types (e.g., `React.ChangeEvent<HTMLInputElement>`)
+- Component design:
+  - Break large components into smaller, composable pieces
+  - Use composition over inheritance
+  - Implement proper separation of concerns
+  - Export components with display names when needed
+
+## STYLING GUIDELINES
+
+- Use Tailwind CSS for styling, following utility-first approach
+- Maintain consistent spacing and responsive design
+- Create UI inspired by Vercel, Apple, and other modern designs
+- Prefer Tailwind animations where sufficient
+- Use Framer Motion for complex animations when needed
+- Consider accessibility (a11y) in all UI components
+- Use CSS variables for theme colors and maintain dark mode support
+
+## DEPENDENCIES
+
+- Icons: Use lucide-icons exclusively for icons
+- Animation: Use tailwind-animations for simple animations, framer-motion for complex ones
+- Forms: Use react-hook-form with zod for form validation
+- State management: Use React Context for global state, or libraries like Zustand if needed
+- Date handling: Use date-fns for date manipulation
+
+## CODING STANDARDS
+
+- Functional programming paradigms where appropriate
+- Destructure props and state for cleaner code
+- Use meaningful variable and function names
+- Add comments for complex logic only
+- Use proper error handling patterns
+- Implement optimizations like useMemo and useCallback where appropriate
+- Follow ESLint and Prettier configurations
+
+## COMMUNICATION STYLE
+
+- Write concise but complete code without shortcuts
+- Implement all requested features with quality code
+- Focus on code rather than lengthy explanations
+- Provide short comments for complex logic
+- Use modern ES6+ JavaScript features
+- Only use the command line when absolutely necessary
+- Ask for library installation instead of running terminal commands
+
+## APP ROUTER SPECIFICS
+
+- Always include "use client" directive at the top of client components
+- Use "use server" for server actions where appropriate
+- Follow Next.js App Router patterns for layouts, loading states, error handling
+- Implement proper data fetching strategies (server components)
+- Use Next.js built-in SEO features
+
+## HANDLING REQUESTS
+
+- Write complete implementations without being lazy
+- Break complex solutions into manageable parts
+- Provide clear, working code without bugs
+- Suggest improvements when appropriate
+- Focus on delivering working solutions that follow best practices
+
+## ADDITIONAL NOTES
+
+- Don't add extra comments like "this is a server component", we don't need basic comments like this.
+- Use the correct import alias for this project "@/"
+- We are using Tailwind v4. Try to use the build in classes from it. If you need complex animations, use framer-motion
+- Use yarn instead of npm
+- Use react-wrap-balancer where needed to have text look nice across devices
