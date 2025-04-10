@@ -1,9 +1,9 @@
-import { prisma } from "@/lib/prisma";
+import { getAllPosts } from "@/lib/firebase-utils";
 import NewPostForm from "./_components/new-post-form";
 import DeletePostButton from "./_components/delete-post-button";
 
 export default async function Home() {
-  const posts = await prisma.post.findMany();
+  const posts = await getAllPosts();
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
